@@ -1,0 +1,46 @@
+市场与销售
+	市场总监      链接//www.lagou.com/zhaopin/shichangzongjian/
+	市场策划      链接//www.lagou.com/zhaopin/shichangcehua/
+	销售总监      链接//www.lagou.com/zhaopin/xiaoshouzongjian/
+	BD        链接//www.lagou.com/zhaopin/BD/
+	市场推广      链接//www.lagou.com/zhaopin/shichangtuiguang/
+技术
+	CTO       链接//www.lagou.com/zhaopin/CTO/
+	Java      链接//www.lagou.com/zhaopin/Java/
+	iOS       链接//www.lagou.com/zhaopin/iOS/
+	C++       链接//www.lagou.com/zhaopin/C++/
+	html5     链接//www.lagou.com/zhaopin/html51/
+	测试        链接//www.lagou.com/zhaopin/ceshi/
+	技术总监      链接//www.lagou.com/zhaopin/jishuzongjian/
+	数据挖掘      链接//www.lagou.com/zhaopin/shujuwajue/
+	架构师       链接//www.lagou.com/zhaopin/jiagoushi/
+	Android   链接//www.lagou.com/zhaopin/Android/
+	PHP       链接//www.lagou.com/zhaopin/PHP/
+	前端开发      链接//www.lagou.com/zhaopin/qianduankaifa/
+产品
+	产品总监      链接//www.lagou.com/zhaopin/chanpinzongjian/
+	产品经理      链接//www.lagou.com/zhaopin/chanpinjingli1/
+	游戏策划      链接//www.lagou.com/zhaopin/youxicehua/
+	数据产品经理    链接//www.lagou.com/zhaopin/shujuchanpinjingli/
+运营
+	编辑        链接//www.lagou.com/zhaopin/bianji/
+	运营总监      链接//www.lagou.com/zhaopin/yunyingzongjian/
+	新媒体运营     链接//www.lagou.com/zhaopin/xinmeitiyunying/
+	COO       链接//www.lagou.com/zhaopin/COO/
+	数据运营      链接//www.lagou.com/zhaopin/shujuyunying/
+设计
+	交互设计      链接//www.lagou.com/zhaopin/jiaohusheji/
+	UI设计师     链接//www.lagou.com/zhaopin/UIshejishi/
+	网页设计师     链接//www.lagou.com/zhaopin/wangyeshejishi/
+	视觉设计师     链接//www.lagou.com/zhaopin/shijueshejishi/
+	平面设计师     链接//www.lagou.com/zhaopin/pingmianshejishi/
+职能
+	HR        链接//www.lagou.com/zhaopin/HR/
+	行政        链接//www.lagou.com/zhaopin/xingzheng1/
+	财务        链接//www.lagou.com/zhaopin/caiwu1/
+	审计        链接//www.lagou.com/zhaopin/jinrongshenji/
+金融
+	投资        链接//www.lagou.com/zhaopin/touzi/
+	风控        链接//www.lagou.com/zhaopin/jinrong3fengkong/
+	并购        链接//www.lagou.com/zhaopin/binggou/
+	融资        链接//www.lagou.com/zhaopin/rongzi/
