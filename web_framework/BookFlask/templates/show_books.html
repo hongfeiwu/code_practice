@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- bookstrap css js, jquery-->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="page-header">
+              <h1>书单</h1>
+            </div>
+        </div>
+        <div class="panel-body">
+            <p>{{ flash_mes }}</p>
+        </div>
+        <div class="panel-body">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addBook">
+                增加新书
+            </button>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                增加Book
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="card-panel edit-form" action="{{ url_for('add_book')}}"
+                                  id="addBookform" method=post>
+                                <div class="form-group">
+                                    <label for="name">书名</label>
+                                    <input type="text" class="form-control" name=title  id="title"
+                                           placeholder="请输入书名" required>
+                                    <label for="author">作者</label>
+                                    <input type="text" class="form-control" name=author  id="author"
+                                           placeholder="请输入作者" required>
+                                    <label for="is_read">
+                                        <input type=checkbox name=is_read id="is_read">已阅读
+                                    </label>
+                                </div>
+                                <p>
+                                    <input type="submit" form="addBookform" value="提交"  class="btn btn-default"
+                                            formmethod="post"/>
+                                    <input type="reset" form="addBookform" value="重置"  class="btn btn-default"/>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>阅读情况</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    {% if book.is_read %}
+                        <td>已阅读</td>
+                    {% else %}
+                        <td>未阅读</td>
+                    {% endif %}
+                    <td>
+                        <button class="btn btn-primary btn-lg yellow" data-toggle="modal" data-target="#myModal">
+                            修改
+                        </button>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">×
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            修改Book
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="card-panel edit-form" action="{{ url_for('update_book', bookid=book.id)}}"
+                                              id="updateBookform" method=post>
+                                            <div class="form-group">
+                                                <label for="name">书名</label>
+                                                <input type="text" class="form-control" name=title  id="title"
+                                                       value={{ book.title }} required>
+                                                <label for="author">作者</label>
+                                                <input type="text" class="form-control" name=author  id="author"
+                                                       value={{ book.author }} required>
+                                                <label for="is_read">
+                                                    <input type=checkbox name=is_read id="is_read"
+                                                           value={{ book.is_read }}>已阅读
+                                                </label>
+                                            </div>
+                                            <p>
+                                                <input type="submit" form="updateBookform" value="提交"  class="btn btn-default"/>
+                                                <input type="reset" form="updateBookform" value="重置"  class="btn btn-default"/>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ url_for('delete_book', bookid=book.id)}}"  class="btn btn-primary btn-lg">删除</a>
+                        <!-- 模态框（Modal） -->
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+</html>

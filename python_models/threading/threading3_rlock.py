@@ -13,6 +13,7 @@ Lock 不支持递归加锁，也就是说即便在同 线程中，也必须等�
 
 
 Lock跟Rlock区别：RLock允许在同一线程中被多次acquire。而Lock却不允许这种情况
+RLock对Lock进行了封装，增加了__enter__（acquire）,__exit__（release）的上下文管理器，所以需要用with语句
 """
 lock = threading.RLock()
 

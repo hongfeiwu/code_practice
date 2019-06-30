@@ -1,0 +1,8 @@
+li a {
+    color: indianred;
+}
+
+body {
+    background-size:100% 100% !important;
+    background: white url("images/bg.jpg") no-repeat;
+}

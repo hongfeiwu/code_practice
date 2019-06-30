@@ -11,18 +11,28 @@ Event 通过通过 个内部标记来协调多线程运 。
 """
 
 
-def test_event():
-    e = Event()
-
-    def test():
-        for i in range(5):
-            print 'start wait'
-            e.wait()
-            e.clear()  # 如果不调用clear()，那么标记一直为 True，wait()就不会发生阻塞行为
-            print i
-
-    Thread(target=test).start()
-    return e
+import threading
+import time
 
 
-ee = test_event()
+class WorkThread(threading.Thread):
+    def __init__(self, signal):
+        threading.Thread.__init__(self)
+        self.singal = signal
+
+    def run(self):
+        print("妹纸 %s,睡觉了 ..." % self.name)
+        self.singal.wait()
+        print("妹纸 %s, 起床..." % self.name)
+
+if __name__ == "__main__":
+
+    singal = threading.Event()
+    for t in range(0, 6):
+        thread = WorkThread(singal)
+        thread.start()
+
+    print("三秒钟后叫妹纸起床 ")
+    time.sleep(3)
+    # 唤醒阻塞中的妹纸
+    singal.set()

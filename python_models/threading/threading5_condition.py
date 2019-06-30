@@ -24,17 +24,20 @@ def tc1():
     with con:
         for i in range(5):
             print current_thread().name, i
-            sleep(0.3)
-            if i == 3:
+            sleep(0.1)
+            if i % 2 == 0:
                 con.wait()
+            con.notify()
 
 
 def tc2():
     with con:
         for i in range(5):
             print current_thread().name, i
-            sleep(0.1)
             con.notify()
+            if i == 3:
+                sleep(0.3)
+                con.wait()
 
 Thread(target=tc1).start()
 Thread(target=tc2).start()

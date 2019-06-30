@@ -25,7 +25,7 @@ class myThread(threading.Thread):
         threadLock.acquire()
         print_time(self.name, self.counter, 3)
         # 释放锁
-        threadLock.release()
+        # threadLock.release()
 
 
 def print_time(thread_name, delay, counter):
@@ -56,9 +56,9 @@ for t in threads:
 print "Exiting Main Thread"
 
 
-
 def show(num):
     print threading.current_thread().getName(), num
+
 
 def thread_cal():
     local_num = 0
